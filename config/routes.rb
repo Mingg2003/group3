@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :borrows
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :library_s
   get 'library/System'
