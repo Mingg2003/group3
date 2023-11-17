@@ -9,6 +9,10 @@
     Add New Booklist
     <% end %>
   </div>
+  <%= form_tag(booklists_path, method: :get) do %>
+    <%= text_field_tag :term, params[:term], placeholder: 'Search books' %>
+    <%= submit_tag 'Search' %>
+  <% end %>
 
   <table class="table-auto border-collapse border-slate-400 w-full">
     <thead class="bg-slate-50 dark:bg-slate-700">

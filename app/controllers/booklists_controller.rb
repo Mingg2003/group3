@@ -4,6 +4,7 @@ class BooklistsController < ApplicationController
   # GET /booklists or /booklists.json
   def index
     @booklists = Booklist.all
+    @booklists = @booklists.search(params[:term]) if params[:term].present?
   end
 
   # GET /booklists/1 or /booklists/1.json
