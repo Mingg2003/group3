@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root  "library_system_management#home"
+  root to:'mingg#home'
 end
+
