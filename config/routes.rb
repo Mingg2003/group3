@@ -1,6 +1,15 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :products
+  resources :productcategories
+  resources :suppliers
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/login'
+  get 'sessions/welcome'
+  get 'users/new'
+  get 'users/create'
   resources :borrows
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :library_s
@@ -11,6 +20,11 @@ Rails.application.routes.draw do
   resources :types
   authenticate :user, ->(u) { u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
+  resources :users, only: [:new, :create]
+    get 'login', to: 'sessions#new'
+    post 'login', to: 'sessions#create'
+    get 'welcome', to: 'sessions#welcome'
+  resources :payments, only: [:new, :create]
   end
 
 

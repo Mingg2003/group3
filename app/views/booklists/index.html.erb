@@ -10,7 +10,8 @@
     <% end %>
   </div>
   <%= form_tag(booklists_path, method: :get) do %>
-    <%= text_field_tag :term, params[:term], placeholder: 'Search books' %>
+    <div class="text-center mx-auto mb-4"> 
+    <%= text_field_tag :term, params[:term], placeholder: 'Search ' %>
     <%= submit_tag 'Search' %>
   <% end %>
 
@@ -18,7 +19,7 @@
     <thead class="bg-slate-50 dark:bg-slate-700">
       <tr>
         
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Tilte</th>
+                  <th class="border border-slate-300 dark:border-slate-600 font-calibri p-4 text-slate-900 dark:text-slate-200 text-left">Tilte</th>
                   <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Author</th>
                   <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Publisher</th>
                   <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Year</th>
@@ -49,6 +50,7 @@
       
       <% end %>
       <% end %>
+      
     </tbody>
   </table>
 </div>

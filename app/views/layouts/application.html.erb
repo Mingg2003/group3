@@ -5,11 +5,8 @@
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
 
   </head>
-
-
   <body class="font-sans font-normal leading-normal text-gray-800 bg-white flex flex-col min-h-screen " >
-
-
+  
     <header>
 
       <%= render "shared/flash_notice" %>
@@ -20,4 +17,6 @@
       <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
   </body>
+  
+
 </html>
