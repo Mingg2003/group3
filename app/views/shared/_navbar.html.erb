@@ -21,10 +21,54 @@
       <div><%# More links can go here %>
 
       </div>
-      <div class="search-bar">
-  <input type="text" placeholder="Search">
-  <button type="submit">Search</button>
-</div>
+      <style>
+      .search-bar {
+        width: 300px;
+        height: 40px;
+        border-radius: 150px;
+        overflow: hidden;
+        background-color: #f1f1f1;
+      }
+    
+      .search-container {
+        display: flex;
+        align-items: center;
+        padding: 1px;
+      }
+    
+      .search-icon {
+        margin-right: 5px;
+      }
+    
+      .search-input {
+        flex: 1;
+        border: none;
+        background-color: transparent;
+        outline: none;
+      }
+    
+      .search-button {
+        padding: 8px 15px;
+        background-color: #333;
+        color: #ffffff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+    </style>
+    
+    <div class="search-bar">
+      <div class="search-container">
+        <div class="search-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <form action="https://www.google.com/search" method="GET" target="_blank">
+          <input type="text" name="q" class="search-input" placeholder="Tìm kiếm">
+          <button type="submit" class="search-button">Tìm</button>
+        </form>
+      </div>
+    </div>
+
       <style>
       .dropdown {
         position: relative;
@@ -67,14 +111,15 @@
     <a href="booklists">Hihi 3</a>
   </div>
 </div>
-
-      
-      <% if user_signed_in? %>
+ <% if user_signed_in? %>
         <%= link_to "Edit account", edit_user_registration_path, class: "p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
         <%= button_to "Log out", destroy_user_session_path, method: :delete, class:"p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
       <% else %>
-        <%= link_to "Sign in", new_user_session_path, class:"p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
-        <%= link_to "Sign up", new_user_registration_path, class:"p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block lg:ml-2" %>
+      <%= link_to "Sign in", new_user_session_path, class:"p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block", style:"font-weight: bold;" %>
+
+<%= link_to "Sign up", new_user_registration_path, class:"p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block lg:ml-2", style:"font-weight: bold;" %>
+
+      
 
         <span class="h-5 w-px bg-gray-200 mx-3"></span>
 
