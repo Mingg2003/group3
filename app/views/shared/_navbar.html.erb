@@ -20,9 +20,55 @@
     <div class="items-center block w-full mt-2 text-center lg:flex lg:flex-row lg:flex-1 lg:mt-0 lg:text-left lg:justify-end">
       <div><%# More links can go here %>
 
-      <%= link_to "Products", "/products", class: "p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
-
       </div>
+      <div class="search-bar">
+  <input type="text" placeholder="Search">
+  <button type="submit">Search</button>
+</div>
+      <style>
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropbtn {
+        background-color: #ffffff; /* Thay đổi thành màu trắng */
+        color: #000000; /* Thay đổi thành màu đen */
+        padding: 10px 20px;
+        border-radius: 4px;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ffffff; /* Thay đổi thành màu trắng */
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: #000000; /* Thay đổi thành màu đen */
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      </style>
+
+<div class="dropdown">
+  <button class="dropbtn">Menu</button>
+  <div class="dropdown-content">
+    <a href="/products">Cmm</a>
+    <a href="/suppliers">Sv 2</a>
+    <a href="booklists">Hihi 3</a>
+  </div>
+</div>
+
+      
       <% if user_signed_in? %>
         <%= link_to "Edit account", edit_user_registration_path, class: "p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
         <%= button_to "Log out", destroy_user_session_path, method: :delete, class:"p-3 hover:bg-gray-50 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
