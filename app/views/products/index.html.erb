@@ -9,15 +9,19 @@
     Add New Product
     <% end %>
   </div>
-
+  <%= form_tag(products_path, method: :get) do %>
+    <div class="text-left mx-auto mb-4">
+      <%= text_field_tag :term, params[:term], placeholder: 'Search', style: 'border-radius: 8px; padding: 8px;' %>
+      <%= submit_tag 'Search', style: 'border-radius: 8px; padding: 8px;' %>
+    </div>
+  <% end %>
   <table class="table-auto border-collapse border-slate-400 w-full" style="background-color: #C3F0E9">
-  
-    <thead class="bg-slate-50 dark:bg-slate-700">
+  <thead class="bg-slate-50 dark:bg-slate-700">
     <tr>
         
           <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Name</th>
                   <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Description</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Price</th>>
+                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Price</th>
                   <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Ingredient</th>
                   <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Available</th>
                   <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Quantity</th>
