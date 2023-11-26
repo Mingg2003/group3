@@ -1,6 +1,9 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :orders
+  resources :paymentmethods
+  resources :customers
   resources :products
   resources :productcategories
   resources :suppliers

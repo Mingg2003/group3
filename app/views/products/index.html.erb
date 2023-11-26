@@ -10,22 +10,21 @@
     <% end %>
   </div>
 
-  <table class="table-auto border-collapse border-slate-400 w-full" style="background-color: #32a852;">
-
-      
+  <table class="table-auto border-collapse border-slate-400 w-full" style="background-color: #C3F0E9">
+  
     <thead class="bg-slate-50 dark:bg-slate-700">
-      <tr>
+    <tr>
         
-          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #32a852">Name</th>
-        
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Description</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Price</th>>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Ingredient</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Available</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Quantity</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Supplier</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Productcategory</th>
+          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Name</th>
+                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Description</th>
+                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Price</th>>
+                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Ingredient</th>
+                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Available</th>
+                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Quantity</th>
+                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Supplier</th>
+                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Productcategory</th>
                 
+                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Detail</th>
       </tr>
     </thead>
 
@@ -33,18 +32,18 @@
       <% @products.each do |product| %>
       <%= content_tag :tr, id: dom_id(product), class: dom_class(product) do %>
       
-        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= link_to product.name, product %></td>
+        <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= link_to product.name, product %></td>
       
 
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= product.description %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= product.price %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= product.ingredient %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= product.available %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= product.quantity %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= product.supplier.name %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= product.productcategory.name %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= product.description %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= product.price %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= product.ingredient %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BBe-400"><%= product.available %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= product.quantity %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= product.supplier.name %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= product.productcategory.name %></td>
       
-      
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= link_to 'Show', product %></td>
       <% end %>
       <% end %>
     </tbody>
