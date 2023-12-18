@@ -68,3 +68,4 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:orderid, :customer_id, :product_id, :orderdate, :paymentmethod_id)
     end
 end
+

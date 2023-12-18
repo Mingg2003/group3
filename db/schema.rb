@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_26_080627) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_04_095427) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -102,6 +102,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_26_080627) do
   create_table "homes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "invoices", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.integer "quantity"
+    t.decimal "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_invoices_on_product_id"
   end
 
   create_table "library_s", force: :cascade do |t|
@@ -202,6 +211,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_26_080627) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "booklists", "types"
   add_foreign_key "borrows", "booklists"
+  add_foreign_key "invoices", "products"
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "paymentmethods"
   add_foreign_key "orders", "products"

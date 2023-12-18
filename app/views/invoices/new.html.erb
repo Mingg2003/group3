@@ -1,0 +1,11 @@
+<h1>Create Invoice</h1>
+
+<%= form_with(model: @invoice, url: invoices_path, method: :post) do |form| %>
+  <%= form.label :product_id, 'Select Product' %>
+  <%= form.collection_select :product_id, Product.all, :id, :name %>
+
+  <%= form.label :quantity %>
+  <%= form.number_field :quantity %>
+
+  <%= form.submit 'Create Invoice' %>
+<% end %>

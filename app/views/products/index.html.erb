@@ -6,14 +6,19 @@
     <h1 class="text-3xl font-bold">Products</h1>
 
     <%= link_to new_product_path, class: button_class(theme: "primary") do %>
-    Add New Product
+      Add New Product
     <% end %>
+    
+    
+    
+    
   </div>
   <%= form_tag(products_path, method: :get) do %>
     <div class="text-left mx-auto mb-4">
       <%= text_field_tag :term, params[:term], placeholder: 'Search', style: 'border-radius: 8px; padding: 8px;' %>
       <%= submit_tag 'Search', style: 'border-radius: 8px; padding: 8px;' %>
     </div>
+    
   <% end %>
   <table class="table-auto border-collapse border-slate-400 w-full" style="background-color: #C3F0E9">
   <thead class="bg-slate-50 dark:bg-slate-700">
@@ -54,3 +59,4 @@
   </table>
 </div>
 </div>
+

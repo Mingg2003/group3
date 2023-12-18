@@ -1,6 +1,9 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  get 'invoices/new'
+  get 'invoices/create'
+  get 'invoices/show'
   resources :orders
   resources :paymentmethods
   resources :customers
@@ -28,6 +31,9 @@ Rails.application.routes.draw do
     post 'login', to: 'sessions#create'
     get 'welcome', to: 'sessions#welcome'
   resources :payments, only: [:new, :create]
+  resources :invoices, only: [:new, :create]
+
+
   end
 
 
