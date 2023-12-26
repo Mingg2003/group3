@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_04_095427) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_26_044924) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -168,6 +168,37 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_04_095427) do
     t.index ["supplier_id"], name: "index_products_on_supplier_id"
   end
 
+  create_table "recommendations", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.integer "productid"
+    t.integer "price"
+    t.integer "quantity"
+    t.text "sale"
+    t.text "trending"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_recommendations_on_product_id"
+  end
+
+  create_table "shifts", force: :cascade do |t|
+    t.text "shift"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "staffs", force: :cascade do |t|
+    t.string "name"
+    t.integer "staffid"
+    t.integer "phone"
+    t.bigint "shift_id", null: false
+    t.string "performance"
+    t.integer "salary"
+    t.boolean "promotion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shift_id"], name: "index_staffs_on_shift_id"
+  end
+
   create_table "suppliers", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -217,4 +248,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_04_095427) do
   add_foreign_key "orders", "products"
   add_foreign_key "products", "productcategories"
   add_foreign_key "products", "suppliers"
+  add_foreign_key "recommendations", "products"
+  add_foreign_key "staffs", "shifts"
 end

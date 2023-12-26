@@ -1,6 +1,9 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :recommendations
+  resources :staffs
+  resources :shifts
   get 'invoices/new'
   get 'invoices/create'
   get 'invoices/show'

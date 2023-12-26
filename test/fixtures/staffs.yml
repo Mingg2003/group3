@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  staffid: 1
+  phone: 1
+  shift: one
+  performance: MyString
+  salary: 1
+  promotion: false
+
+two:
+  name: MyString
+  staffid: 1
+  phone: 1
+  shift: two
+  performance: MyString
+  salary: 1
+  promotion: false
