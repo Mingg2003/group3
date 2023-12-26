@@ -10,18 +10,20 @@
     <% end %>
   </div>
 
-  <table class="table-auto border-collapse border-slate-400 w-full">
+  <table class="table-auto border-collapse border-slate-400 w-full" style="background-color: #C3F0E9">
     <thead class="bg-slate-50 dark:bg-slate-700">
       <tr>
         
-          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Name</th>
-        
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Staffid</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Phone</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Shift</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Performance</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Salary</th>
-                  <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left">Promotion</th>
+          
+          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Name</th>
+          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Staffid</th>
+          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Phone</th>
+          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Shift</th>
+          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Performance</th>
+          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Salary</th>
+          <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 dark:text-slate-200 text-left" style="background-color: #128ABB;">Promotion</th>
+
+                 
                 
       </tr>
     </thead>
@@ -30,16 +32,16 @@
       <% @staffs.each do |staff| %>
       <%= content_tag :tr, id: dom_id(staff), class: dom_class(staff) do %>
       
-        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= link_to staff.name, staff %></td>
-      
+       
+        <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= link_to staff.name, staff %></td>
 
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= staff.staffid %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= staff.phone %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= staff.shift.shift %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= staff.performance %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= staff.salary %></td>
-              <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"><%= staff.promotion %></td>
-      
+              
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= staff.staffid %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= staff.phone %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= staff.shift.shift %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= staff.performance %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= staff.salary %></td>
+              <td class="border border-slate-300 dark:border-12B1BB-700 p-4 text-slate-500 dark:text-12B1BB-400"><%= staff.promotion %></td>
       
       <% end %>
       <% end %>
